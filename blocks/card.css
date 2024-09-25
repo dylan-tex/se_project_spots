@@ -28,3 +28,6 @@
   background-color: transparent;
   opacity: ;
 }
+
+@media screen and (max-width: 672px) {
+}
