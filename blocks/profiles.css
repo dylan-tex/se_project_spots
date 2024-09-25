@@ -33,7 +33,8 @@
 }
 
 @media screen and (max-width: 672px) {
-  profile {
+  .profile {
+    display: flex;
     flex-direction: column;
     max-width: 288px;
     align-items: center;
