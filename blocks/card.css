@@ -29,6 +29,10 @@
   opacity: ;
 }
 
+.card__title {
+  font: "Poppins", Arial, Helvetica, sans-serif;
+}
+
 @media screen and (max-width: 672px) {
   .card__image {
     height: 288px;
