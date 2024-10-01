@@ -6,6 +6,10 @@
 - Figma
 - Images
 
+[Link to the project on Pages](https://dylan-tex.github.io/se_project_spots/)
+
+[Link to video walk-through](https://youtu.be/JNd820fExMw)
+
 ## Project features
 
 This project made HEAVY use of the Figma platform to derive fonts, spacing, and images.
