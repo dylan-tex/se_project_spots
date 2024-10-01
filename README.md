@@ -8,7 +8,7 @@
 
 [Link to the project on Pages](https://dylan-tex.github.io/se_project_spots/)
 
-[Link to video walk-through](https://youtu.be/JNd820fExMw)
+[Link to my video walk-through of my project](https://youtu.be/JNd820fExMw)
 
 ## Project features
 
