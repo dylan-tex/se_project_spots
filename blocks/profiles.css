@@ -42,6 +42,8 @@
   margin-top: auto;
   opacity: 70%;
   background-color: ;
+  background: none;
+  border: none;
 }
 
 .profile__edit-btn:hover {
@@ -60,6 +62,8 @@
   background-color: #212121;
   color: #fcf5e5;
   box-shadow: none;
+  outline: none;
+  margin-top: 138px;
 }
 
 .profile__add-btn:hover {
@@ -104,9 +108,13 @@
     margin-left: 0;
     width: 100%;
     max-width: 288px;
+    margin-top: 0;
+    box-shadow: none;
+    outline: none;
   }
 
   .profile__edit-btn {
     justify-content: center;
+    margin-bottom: 20px;
   }
 }
