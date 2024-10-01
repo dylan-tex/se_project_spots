@@ -37,11 +37,33 @@
 }
 
 .profile__edit-btn {
+  display: flex;
+  gap: 8px;
   margin-top: auto;
+  opacity: 70%;
+  background-color: ;
+}
+
+.profile__edit-btn:hover {
+  opacity: 100%;
 }
 
 .profile__add-btn {
+  display: flex;
   margin-left: auto;
+  width: 157px;
+  height: 52px;
+  border-radius: 8px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  color: #fcf5e5;
+  box-shadow: none;
+}
+
+.profile__add-btn:hover {
+  opacity: 80%;
 }
 
 @media screen and (max-width: 672px) {
@@ -82,5 +104,9 @@
     margin-left: 0;
     width: 100%;
     max-width: 288px;
+  }
+
+  .profile__edit-btn {
+    justify-content: center;
   }
 }
