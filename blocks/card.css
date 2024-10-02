@@ -11,6 +11,8 @@
   width: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .card__content {
@@ -26,8 +28,9 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: ;
+  opacity: 0.4;
   background-size: cover;
+  cursor: pointer;
 }
 
 .card__title {
@@ -39,7 +42,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 672px) {
@@ -48,5 +52,6 @@
   }
   .card__title {
     font-size: 16px;
+    max-width: 250px;
   }
 }

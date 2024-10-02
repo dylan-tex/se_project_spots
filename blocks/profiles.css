@@ -6,6 +6,9 @@
 
 .profile__avatar {
   margin-right: 20px;
+  width: 190px;
+  height: 190px;
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -41,9 +44,13 @@
   gap: 8px;
   margin-top: auto;
   opacity: 70%;
-  background-color: ;
-  background: none;
+  background-color: transparent;
   border: none;
+  cursor: pointer;
+  font-family: "Poppines", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #212121;
+  font-weight: 500;
 }
 
 .profile__edit-btn:hover {
@@ -64,6 +71,7 @@
   box-shadow: none;
   outline: none;
   margin-top: 138px;
+  cursor: pointer;
 }
 
 .profile__add-btn:hover {
