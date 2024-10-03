@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+.card__like-btn:hover {
+  opacity: 100%;
+}
+
 .card__title {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   max-width: 353px;
