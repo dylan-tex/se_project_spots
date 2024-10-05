@@ -7,7 +7,6 @@
 .page__section {
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 40px;
 }
 
 .footer {
@@ -22,6 +21,8 @@
   opacity: 70%;
 }
 
-.content {
-  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+@media screen and (max-width: 672px) {
+  .page__section {
+    max-width: 288px;
+  }
 }
