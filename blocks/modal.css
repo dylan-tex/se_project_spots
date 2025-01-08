@@ -55,10 +55,18 @@
 }
 
 .modal__submit-btn {
-  width: 156px;
-  /*padding: 18px 0;*/
-  background-color: transparent; /* Make button's background invisible if needed */
-  border: none; /* Remove any borders */
+  width: 276px; /* Matches the Fill (276px) */
+  height: 52px; /* Matches the Hug (52px) */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #212121; /* Dark background color */
+  color: white; /* Text color */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Bold text */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 18px 32px; /* Top/Bottom & Right/Left Padding */
+  text-align: center; /* Center the text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
 }
 
 @media screen and (max-width 672px) {
