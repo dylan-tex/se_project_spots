@@ -33,6 +33,8 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileCloseButton = editProfileModal.querySelector(".modal__close-btn");
 
 function openModal() {
+  const profileName = document.querySelector(".profile__name");
+  const profileDescription = document.querySelector(".profile__description");
   editProfileModal.classList.add("modal_opened");
 }
 
