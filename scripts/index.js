@@ -27,15 +27,21 @@ const initialCards = [
 
 /*console.log(initialCards);*/
 
+// Ties the first element with class profile__edit-btn to the the variable profileEditButton
 const profileEditButton = document.querySelector(".profile__edit-btn");
+
+// Ties the first element with class profile__name to the the variable profileName
 const profileName = document.querySelector(".profile__name");
 
+// Ties the first element with class profile__description to the the variable profileDescription
 const profileDescription = document.querySelector(".profile__description");
 
+// Creates a Modal variable and assigns it the first element with the ID edit-profile-modal
 const editModal = document.querySelector("#edit-profile-modal");
+
+// Creates the elements of the modal (close button and two inputs) and assigns them their respective values in the HTML file
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
-
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
@@ -46,6 +52,7 @@ console.log(editModalNameInput);
 function openModal() {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+
   editModalNameInput = editModal.classList.add("modal_opened");
 }
 
