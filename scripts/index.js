@@ -45,9 +45,16 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
+const editProfileNameInput = editModal.querySelector("#profile-name-input");
+const editProfileDescriptionInput = editModal.querySelector(
+  "#profile-description-input"
+);
 
 console.log(profileName);
 console.log(editModalNameInput);
+
+const ProfileNameEl = document.querySelector(".profile__name");
+const ProfileDescriptionEl = document.querySelector(".profile__description");
 
 function openModal() {
   editModalNameInput.value = profileName.textContent;
