@@ -31,6 +31,7 @@ const initialCards = [
 const profileEditButton = document.querySelector(".profile__edit-btn");
 
 // Ties the element with class profile__add-btn to the the variable newPostButton
+// when this button is hit it should trigger the opening of the addCarmFormElement (a new modal)
 const newPostButton = document.querySelector(".profile__add-btn");
 
 // Ties the first element with class profile__name to the the variable profileName
@@ -59,10 +60,11 @@ const editProfileDescriptionInput = editModal.querySelector(
 
 // From Stage 4 New Post Submission
 // Creates the elements of the New Post Button (close button and two inputs) and assigns them their respective values in the HTML file
-const newPostCloseBtn = newPostButton.querySelector("modal__close-btn");
+//addCardFormElement is a new modal
 const addCardFormElement = document.querySelector("#new-post-modal");
 const nameInput = addCardFormElement.querySelector("#new-post-link-input");
 const linkInput = addCardFormElement.querySelector("#new-post-caption-input");
+const newPostCloseBtn = addCardFormElement.querySelector(".modal__close-btn");
 
 console.log(profileName);
 console.log(editModalNameInput);
@@ -93,7 +95,7 @@ profileEditButton.addEventListener("click", openModal);
 editModalCloseBtn.addEventListener("click", closeModal);
 
 newPostButton.addEventListener("click", openNewPostModal);
-//newPostCloseBtn.addEventListener("click", closeNewPostModal);
+newPostCloseBtn.addEventListener("click", closeNewPostModal);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
@@ -108,8 +110,8 @@ function handleAddCardSubmit(evt) {
   // Prevent default browser behavior.
   evt.preventDefault();
 
-  console.log(nameInput.textContent);
-  console.log(linkInput.textContent);
+  console.log(nameInput.value);
+  console.log(linkInput.value);
 
   closeNewPostModal();
 }
