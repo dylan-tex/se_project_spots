@@ -34,6 +34,7 @@
   height: 40px;
   background-color: transparent; /* Make button's background invisible if needed */
   border: none; /* Remove any borders */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .modal__title {
