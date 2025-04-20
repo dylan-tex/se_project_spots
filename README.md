@@ -1,4 +1,4 @@
-# Project 3: Spots
+# Project 4: Spots
 
 ### Overview
 
@@ -18,7 +18,7 @@ This project made HEAVY use of the Figma platform to derive fonts, spacing, and 
 
 This was the Figma file used to model the project.
 
-- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+- [Link to the project on Figma](https://www.figma.com/design/rGnA0eBcxYVOpA4bxmqlyu/Sprint-4-Project-Spots---March-2025?node-id=11-604&t=h2GgDLCYLK9z4v7t-0)
 
 - It was a massive hurdle learning Figma. The main things that are important in Figma are:
 
