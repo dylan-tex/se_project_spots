@@ -12,8 +12,6 @@
 
 ## Project features
 
-Testing
-
 This project made HEAVY use of the Figma platform to derive fonts, spacing, and images.
 
 **Figma**
