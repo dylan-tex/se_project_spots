@@ -41,20 +41,25 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 // Creates a Modal variable and assigns it the first element with the ID edit-profile-modal
-const editModal = document.querySelector("#edit-profile-modal");
+const editProfileModal = document.querySelector("#edit-profile-modal");
 
 // Creates the elements of the modal (close button and two inputs) and assigns them their respective values in the HTML file
-const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
-const editModalNameInput = editModal.querySelector("#profile-name-input");
-const editModalDescriptionInput = editModal.querySelector(
+const editProfileModalCloseBtn =
+  editProfileModal.querySelector(".modal__close-btn");
+const editProfileModalNameInput = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editProfileModalDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
 // From stage 4 part 2
-const editProfileForm = editModal.querySelector(".modal__form");
+const editProfileForm = editProfileModal.querySelector(".modal__form");
 
-const editProfileNameInput = editModal.querySelector("#profile-name-input");
-const editProfileDescriptionInput = editModal.querySelector(
+const editProfileNameInput = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
@@ -67,32 +72,32 @@ const linkInput = addCardFormElement.querySelector("#new-post-caption-input");
 const newPostCloseBtn = addCardFormElement.querySelector(".modal__close-btn");
 
 console.log(profileName);
-console.log(editModalNameInput);
+console.log(editProfileModalNameInput);
 
 const ProfileNameEl = document.querySelector(".profile__name");
 const ProfileDescriptionEl = document.querySelector(".profile__description");
 
 function openModal() {
-  editModalNameInput.value = profileName.textContent;
-  editModalDescriptionInput.value = profileDescription.textContent;
+  editProfileModalNameInput.value = profileName.textContent;
+  editProfileModalDescriptionInput.value = profileDescription.textContent;
 
-  editModal.classList.add("modal_opened");
+  editProfileModal.classList.add("modal_is-opened");
 }
 
 function openNewPostModal() {
-  addCardFormElement.classList.add("modal_opened");
+  addCardFormElement.classList.add("modal_is-opened");
 }
 
 function closeModal() {
-  editModal.classList.remove("modal_opened");
+  editProfileModal.classList.remove("modal_is-opened");
 }
 
 function closeNewPostModal() {
-  addCardFormElement.classList.remove("modal_opened");
+  addCardFormElement.classList.remove("modal_is-opened");
 }
 
 profileEditButton.addEventListener("click", openModal);
-editModalCloseBtn.addEventListener("click", closeModal);
+editProfileModalCloseBtn.addEventListener("click", closeModal);
 
 newPostButton.addEventListener("click", openNewPostModal);
 newPostCloseBtn.addEventListener("click", closeNewPostModal);
@@ -102,7 +107,7 @@ function handleEditProfileSubmit(evt) {
   ProfileNameEl.textContent = editProfileNameInput.value;
   ProfileDescriptionEl.textContent = editProfileDescriptionInput.value;
 
-  editModal.classList.remove("modal_opened");
+  editProfileModal.classList.remove("modal_is-opened");
 }
 
 // Create the form submission handler.
