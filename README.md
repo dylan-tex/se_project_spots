@@ -2,23 +2,38 @@
 
 ### Overview
 
+<!-- >
+I need to go through
+-->
+
 - Intro
 - Figma
 - Images
+- `Edit Profile` Button impelemented
+- `New Post` Button started
 
 [Link to my project on Pages](https://dylan-tex.github.io/se_project_spots/)
+
+<!-- >
+I need to do a new video walkthrough
+-->
 
 [Link to my video walk-through](https://youtu.be/JNd820fExMw)
 
 ## Project features
 
-This project made HEAVY use of the Figma platform to derive fonts, spacing, and images.
+This project made heavy use of javascript and the DOM. It also utilized transitions when opening and closing the modals. Modals are a class we defined that is referenced in the DOM often and the purpose of the modal is to edit page the user sees. It gathers user input and either edits the page or logs text to the console.
+
+**What is the DOM?**
+The DOM is the Document Object Model where by objects are instances of classes and javascript can manipulate these objects to change the result to the user. This allows much greater flexibility with handling using input and allows for much more efficient code.
 
 **Figma**
 
 This was the Figma file used to model the project.
 
-- [Link to the project on Figma](https://www.figma.com/design/rGnA0eBcxYVOpA4bxmqlyu/Sprint-4-Project-Spots---March-2025?node-id=11-604&t=h2GgDLCYLK9z4v7t-0)
+- [Link to the project on Figma](https://www.figma.com/design/rGnA0eBcxYVOpA4bxmqlyu/Sprint-4-Project-Spots---March-2025?node-id=0-1&p=f)
+
+**From Project 3 Notes**
 
 - It was a massive hurdle learning Figma. The main things that are important in Figma are:
 
@@ -51,14 +66,12 @@ This project also made use of responsive design for mobile devices, deploying co
 
 ## Instructions on Deployment
 
-In order to make best use of the code-- I would highly suggest a thorough review of Figma.
+Continuing in line with project 3 guidance-- I would highly suggest a thorough review of Figma. Specifically the use ot the `options` key (on macs) to determine spacing between elements.
 
 There are many tutorials on Figma. Here is one such example:
 
 [Figma YouTube Tutorial](https://www.youtube.com/watch?v=To_ADCVSg5g)
 
-What ultimately sped everything up for me was realizing that by double clicking on elements I can explore their properties and then, again, the importance of the `option` key (on macs) to determine spacing between elements.
-
 ## Plans on Improving the Project
 
-The actual implementation of the `New Post` and `Edit Profile` buttons has not been completed so they are purely aesthetic in their current state.
+The `New Post` button has not been fully implemented yet. It currently logs to the console but does nothing by way of creating a new post yet.
