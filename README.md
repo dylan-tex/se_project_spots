@@ -2,34 +2,22 @@
 
 ### Overview
 
-<!-- >
-To do:
-0) mention the usefulness of branches in the project ✅
-1) walkthrough video in Streamlabs ✅
-2) insert a video showing the transitions and highlighting transition code (gifs did not work)
-3) work on plans for improving the projects ✅
--->
-
 - [Intro](#intro)
 - [GitHub Branches](#github-branches)
 - [BEM Methodology](#bem-methodology)
 - [The DOM](#what-is-the-dom)
 - [Modal Class](#modal-class)
 - [Figma](#figma)
-- `Edit Profile` Button impelemented
-- `New Post` Button started
+- [Instructions on Deployment](#instructions-on-deployment)
+- [Plans on Improving the Project](#plans-on-improving-the-project)
 
 [Link to my video walk-through](https://www.youtube.com/watch?v=CD4nkn_C6rM)
 
 [Link to my project on Pages](https://dylan-tex.github.io/se_project_spots/)
 
-<!-- >
-walkthrough video here
--->
-
 ## Intro
 
-This project made heavy use of javascript and the DOM. I also was able to use GitHub branches to work through challenging problems.
+This project made heavy use of javascript and the DOM. I also was able to use GitHub branches to work through challenging problems. The **Edit Profile** button was impelemented. And the **New Post** button was started.
 
 ### GitHub Branches
 
@@ -137,4 +125,4 @@ Make sure that you are utilizing branches because if one branch becomes corrupte
 
 ## Plans on Improving the Project
 
-The `New Post` button has not been fully implemented yet. It currently logs to the console but does nothing by way of creating a new post yet.
+The **New Post** button has not been fully implemented yet. It currently logs to the console but does nothing by way of creating a new post yet.
