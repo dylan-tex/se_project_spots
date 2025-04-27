@@ -10,11 +10,16 @@ To do:
 3) work on plans for improving the projects ✅
 -->
 
-- Intro
-- Figma
-- Images
+- [Intro](#intro)
+- [GitHub Branches](#github-branches)
+- [BEM Methodology](#bem-methodology)
+- [The DOM](#what-is-the-dom)
+- [Modal Class](#modal-class)
+- [Figma](#figma)
 - `Edit Profile` Button impelemented
 - `New Post` Button started
+
+[Link to my video walk-through](https://www.youtube.com/watch?v=CD4nkn_C6rM)
 
 [Link to my project on Pages](https://dylan-tex.github.io/se_project_spots/)
 
@@ -22,13 +27,11 @@ To do:
 walkthrough video here
 -->
 
-[Link to my video walk-through](https://www.youtube.com/watch?v=CD4nkn_C6rM)
-
-## Project features
+## Intro
 
 This project made heavy use of javascript and the DOM. I also was able to use GitHub branches to work through challenging problems.
 
-**GitHub Branches**
+### GitHub Branches
 
 GitHub branches are a major game changer. Without branches-- each saved change in a project could potentially corrupt the project if there are errors and make it difficult to "go back in time." However GitHub branches you can compare the logs between branches and even differences in the code between branches.
 
@@ -66,15 +69,15 @@ Sometimes however this merge comnand will not detect any differences in the bran
 
 After doing this make sure to merge the branches so that one branch is not ahead by a commit.
 
-**BEM Methodology**
+### BEM Methodology
 
 Previously deployed but now increasingly important is BEM methodolgy. "Block Element Modifier" Metholodgy helps developers navigate through each others' code. And in this project--- with it's multiple layers of complexity-- was essential .
 
-**What is the DOM?**
+### What is the DOM?
 
 The DOM is the Document Object Model where by objects are instances of classes and javascript can manipulate these objects to change the result to the user. This allows much greater flexibility with handling using input and allows for much more efficient code.
 
-**Modal Class**
+### Modal Class
 
 The objects of the modals class where regulary referenced through DOM integration. It also utilized transitions when opening and closing the modals. Modals are a class we defined that is referenced in the DOM often and the purpose of the modal is to edit page the user sees. It gathers user input and either edits the page or logs text to the console.
 
@@ -90,7 +93,7 @@ One example of the use of transitions and a block modifier is seen here:
 
 In conjuction with the transition declaration in the modal block itself, this line of dictates how the modal transition occurs during open and close.
 
-**Figma**
+### Figma
 
 This was the Figma file used to model the project. Understanding how to interpret Figma continued to play a major role in this project.
 
@@ -124,16 +127,13 @@ This project also made use of responsive design for mobile devices, deploying co
 
 ## Instructions on Deployment
 
-<!--
-
-Adjust this
--->
-
 I would highly suggest a thorough review of Figma. Specifically the use ot the `options` key (on macs) to determine spacing between elements.
 
 There are many tutorials on Figma. Here is one such example:
 
 [Figma YouTube Tutorial](https://www.youtube.com/watch?v=To_ADCVSg5g)
+
+Make sure that you are utilizing branches because if one branch becomes corrupted you can have a backup branch.
 
 ## Plans on Improving the Project
 
