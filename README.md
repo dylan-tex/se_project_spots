@@ -5,9 +5,9 @@
 <!-- >
 To do:
 0) mention the usefulness of branches in the project ✅
-1) walkthrough video in Streamlabs
-2) insert a video showing the transitions and highlighting transition code (cannot do) ✅
-3) work on plans for improving the projects
+1) walkthrough video in Streamlabs ✅
+2) insert a video showing the transitions and highlighting transition code (gifs did not work)
+3) work on plans for improving the projects ✅
 -->
 
 - Intro
@@ -22,7 +22,7 @@ To do:
 walkthrough video here
 -->
 
-[Link to my video walk-through](https://youtu.be/JNd820fExMw)
+[Link to my video walk-through](https://www.youtube.com/watch?v=CD4nkn_C6rM)
 
 ## Project features
 
