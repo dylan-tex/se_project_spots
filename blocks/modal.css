@@ -19,6 +19,7 @@
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
+  /* This is necessary otherwise it doesn't fade in*/
   transition: visibility 0s, opacity 0.5s linear;
 }
 
