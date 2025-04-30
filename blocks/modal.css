@@ -30,6 +30,9 @@
   width: 100%;
   position: relative;
   box-sizing: border-box;
+
+  /* Added border radius*/
+  border-radius: 8px;
 }
 
 .modal__close-btn {
@@ -41,6 +44,13 @@
   background-color: transparent; /* Make button's background invisible if needed */
   border: none; /* Remove any borders */
   cursor: pointer; /* Pointer cursor on hover */
+  opacity: 40%;
+}
+
+/*When hovering over the close button it darkens*/
+.modal__close-btn:hover {
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -48,6 +58,7 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
+  color: #212121;
 }
 
 .modal__label {
@@ -59,16 +70,33 @@
 
 .modal__input {
   padding: 16px 12px;
+  border: 1px solid #21212166;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-family: Poppins;
+  color: #2121214d;
+}
+
+.modal__input::placeholder {
+  font-weight: 500; /* Regular weight instead of 500 */
+  color: #2121214d;
+}
+
+.modal__input:hover {
+  border: 1px solid #212121;
 }
 
 .modal__submit-btn {
-  width: 276px; /* Matches the Fill (276px) */
+  width: 156px; /* Matches the Fill (156px) */
   height: 52px; /* Matches the Hug (52px) */
   border-radius: 8px; /* Rounded corners */
   background-color: #212121; /* Dark background color */
-  color: white; /* Text color */
+  color: #fcf5e5; /* Text color */
   font-size: 16px; /* Text size */
-  font-weight: bold; /* Bold text */
+  font-weight: 500;
   border: none; /* No border */
   cursor: pointer; /* Pointer cursor on hover */
   padding: 18px 32px; /* Top/Bottom & Right/Left Padding */
@@ -76,7 +104,11 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
 }
 
-@media screen and (max-width 672px) {
+.modal__submit-btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 672px) {
   .modal {
     padding: 0 10px;
   }
@@ -88,6 +120,7 @@
   .modal__title {
     font-size: 20px;
     margin: 10px 0 34px;
+    color: #212121;
   }
 
   .modal__close-btn {
@@ -100,5 +133,17 @@
 
   .modal__submit-btn {
     width: 100%;
+  }
+
+  .modal__input {
+    width: 276;
+    height: 48;
+    border-radius: 8px;
+    padding-top: 16px;
+    padding-right: 12px;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    gap: 10px;
+    border-width: 1px;
   }
 }
