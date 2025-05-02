@@ -46,7 +46,7 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 // Creates the elements of the modal (close button and two inputs) and assigns them their respective values in the HTML file
 const editProfileModalCloseBtn =
   editProfileModal.querySelector(".modal__close-btn");
-const editProfileModalNameInput = editProfileModal.querySelector(
+const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
 const editProfileModalDescriptionInput = editProfileModal.querySelector(
@@ -56,9 +56,6 @@ const editProfileModalDescriptionInput = editProfileModal.querySelector(
 // From stage 4 part 2
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 
-const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
-);
 const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
@@ -72,13 +69,13 @@ const linkInput = addCardFormElement.querySelector("#new-post-caption-input");
 const newPostCloseBtn = addCardFormElement.querySelector(".modal__close-btn");
 
 console.log(profileName);
-console.log(editProfileModalNameInput);
+console.log(editProfileNameInput);
 
 const ProfileNameEl = document.querySelector(".profile__name");
 const ProfileDescriptionEl = document.querySelector(".profile__description");
 
 function openModal() {
-  editProfileModalNameInput.value = profileName.textContent;
+  editProfileNameInput.value = profileName.textContent;
   editProfileModalDescriptionInput.value = profileDescription.textContent;
 
   editProfileModal.classList.add("modal_is-opened");
