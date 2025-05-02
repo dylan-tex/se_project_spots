@@ -25,17 +25,12 @@ const initialCards = [
   },
 ];
 
-/*console.log(initialCards);*/
-
 // Ties the first element with class profile__edit-btn to the the variable profileEditButton
 const profileEditButton = document.querySelector(".profile__edit-btn");
 
 // Ties the element with class profile__add-btn to the the variable newPostButton
 // when this button is hit it should trigger the opening of the addCarmFormElement (a new modal)
 const newPostButton = document.querySelector(".profile__add-btn");
-
-// Ties the first element with class profile__name to the the variable profileName
-const profileName = document.querySelector(".profile__name");
 
 // Ties the first element with class profile__description to the the variable profileDescription
 const profileDescription = document.querySelector(".profile__description");
@@ -64,9 +59,6 @@ const newPostModal = document.querySelector("#new-post-modal");
 const nameInput = newPostModal.querySelector("#new-post-link-input");
 const linkInput = newPostModal.querySelector("#new-post-caption-input");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
-
-console.log(profileName);
-console.log(editProfileNameInput);
 
 const ProfileNameEl = document.querySelector(".profile__name");
 const ProfileDescriptionEl = document.querySelector(".profile__description");
@@ -108,10 +100,6 @@ function handleEditProfileSubmit(evt) {
 function handleAddCardSubmit(evt) {
   // Prevent default browser behavior.
   evt.preventDefault();
-
-  console.log(nameInput.value);
-  console.log(linkInput.value);
-
   closeNewPostModal();
 }
 
