@@ -91,5 +91,6 @@ function handleAddCardSubmit(evt) {
   closeModal(newPostModal);
 }
 
+// Made these event listeners more clear
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
