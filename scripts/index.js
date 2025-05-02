@@ -49,9 +49,6 @@ const editProfileModalCloseBtn =
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
-const editProfileModalDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
-);
 
 // From stage 4 part 2
 const editProfileForm = editProfileModal.querySelector(".modal__form");
@@ -76,7 +73,7 @@ const ProfileDescriptionEl = document.querySelector(".profile__description");
 
 function openModal() {
   editProfileNameInput.value = profileName.textContent;
-  editProfileModalDescriptionInput.value = profileDescription.textContent;
+  editProfileDescriptionInput.value = profileDescription.textContent;
 
   editProfileModal.classList.add("modal_is-opened");
 }
