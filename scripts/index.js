@@ -32,9 +32,6 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 // when this button is hit it should trigger the opening of the addCarmFormElement (a new modal)
 const newPostButton = document.querySelector(".profile__add-btn");
 
-// Ties the first element with class profile__description to the the variable profileDescription
-const profileDescription = document.querySelector(".profile__description");
-
 // Creates a Modal variable and assigns it the first element with the ID edit-profile-modal
 const editProfileModal = document.querySelector("#edit-profile-modal");
 
@@ -64,8 +61,8 @@ const ProfileNameEl = document.querySelector(".profile__name");
 const ProfileDescriptionEl = document.querySelector(".profile__description");
 
 function openModal() {
-  editProfileNameInput.value = profileName.textContent;
-  editProfileDescriptionInput.value = profileDescription.textContent;
+  editProfileNameInput.value = ProfileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 
   editProfileModal.classList.add("modal_is-opened");
 }
@@ -100,6 +97,11 @@ function handleEditProfileSubmit(evt) {
 function handleAddCardSubmit(evt) {
   // Prevent default browser behavior.
   evt.preventDefault();
+
+  /* this is useful to determine if the newPostModal is working properly*/
+
+  /*console.log(nameInput.value);
+  console.log(linkInput.value); */
   closeNewPostModal();
 }
 
