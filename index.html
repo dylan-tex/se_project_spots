@@ -1,3 +1,4 @@
+<!-- Formatted with Prettier in Visual Studio-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +14,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Spots</title>
   </head>
+
   <body>
     <div class="page">
       <header class="header">
@@ -113,41 +115,67 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <h2 class="modal__title">Edit profile</h2>
-          <button type="submit" class="modal__close-btn">
-            <img src="images/close-icon.svg" alt="Close" class="close-icon">
+          <button type="button" class="modal__close-btn">
+            <img src="images/close-icon.svg" alt="Close" class="close-icon" />
           </button>
           <form name="edit-profile" class="modal__form">
-              <label for="profile-name-input" class="modal__label">
-                Name
-                <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name">
-              </label>
-              <label for="profile-description-input" class="modal__label">
-                Description
-                <input id="profile-description-input" type="text" class="modal__input" placeholder="Describe yourself">
-              </label>
-              <button type="submit" class="modal__submit-btn">Save</button>
-          </form>
-        </div>
-    </div>
-    <div class="modal" id="new-post-modal">
-      <div class="modal__container">
-        <h2 class="modal__title">New post</h2>
-        <button type="submit" class="modal__close-btn">
-          <img src="images/close-icon.svg" alt="Close" class="close-icon">
-        </button>
-        <form name="new-post" class="modal__new-post">
-            <label for="new-post-link-input" class="modal__label">
-              Image Link
-              <input id="new-post-link-input" type="text" class="modal__input" placeholder="Paste a link to the picture">
+            <label class="modal__label">
+              Name
+              <input
+                id="profile-name-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your name"
+                required
+              />
             </label>
-            <label for="new-post-caption-input" class="modal__label">
-              Caption
-              <input id="new-post-caption-input" type="text" class="modal__input" placeholder="Type your caption">
+            <label class="modal__label">
+              Description
+              <input
+                id="profile-description-input"
+                type="text"
+                class="modal__input"
+                placeholder="Describe yourself"
+                required
+              />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
-        </form>
+          </form>
+        </div>
       </div>
-  </div>
-    <script defer src="./scripts/index.js"></script>
+      <div class="modal" id="new-post-modal">
+        <div class="modal__container">
+          <h2 class="modal__title">New post</h2>
+          <button type="submit" class="modal__close-btn">
+            <!-- I checked the close icon to ensure it is the correct close icon. I downloaded it again selecting the darkened x icon-->
+            <img src="images/close-icon.svg" alt="Close" class="close-icon" />
+          </button>
+          <form name="new-post" class="modal__new-post">
+            <label class="modal__label">
+              Image Link
+              <input
+                id="new-post-link-input"
+                type="text"
+                class="modal__input"
+                placeholder="Paste a link to the picture"
+                required
+              />
+            </label>
+            <label class="modal__label">
+              Caption
+              <input
+                id="new-post-caption-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your caption"
+                required
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+      <script defer src="./scripts/index.js"></script>
+    </div>
   </body>
 </html>
