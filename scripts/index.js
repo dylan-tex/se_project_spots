@@ -59,11 +59,11 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
 
 // From Stage 4 New Post Submission
 // Creates the elements of the New Post Button (close button and two inputs) and assigns them their respective values in the HTML file
-//addCardFormElement is a new modal
-const addCardFormElement = document.querySelector("#new-post-modal");
-const nameInput = addCardFormElement.querySelector("#new-post-link-input");
-const linkInput = addCardFormElement.querySelector("#new-post-caption-input");
-const newPostCloseBtn = addCardFormElement.querySelector(".modal__close-btn");
+//newPostModal is a new modal
+const newPostModal = document.querySelector("#new-post-modal");
+const nameInput = newPostModal.querySelector("#new-post-link-input");
+const linkInput = newPostModal.querySelector("#new-post-caption-input");
+const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
 console.log(profileName);
 console.log(editProfileNameInput);
@@ -79,7 +79,7 @@ function openModal() {
 }
 
 function openNewPostModal() {
-  addCardFormElement.classList.add("modal_is-opened");
+  newPostModal.classList.add("modal_is-opened");
 }
 
 function closeModal() {
@@ -87,7 +87,7 @@ function closeModal() {
 }
 
 function closeNewPostModal() {
-  addCardFormElement.classList.remove("modal_is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 }
 
 profileEditButton.addEventListener("click", openModal);
@@ -116,4 +116,4 @@ function handleAddCardSubmit(evt) {
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+newPostModal.addEventListener("submit", handleAddCardSubmit);
