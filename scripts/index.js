@@ -25,7 +25,11 @@ const initialCards = [
   },
 ];
 
-// Creates a Modal variable and assigns it the first element with the ID edit-profile-modal
+// Stores the name of the Profile that is pre-populated in the document upon start-up
+const profileNameEl = document.querySelector(".profile__name");
+const profileDescriptionEl = document.querySelector(".profile__description");
+
+// Creates the elements of the Edit Profile  Modal (close button and two inputs ) and assigns them the corresponding values in the first object with the class edit-profile-modal in the HTML file
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
@@ -37,16 +41,13 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 const editProfileModalCloseBtn =
   editProfileModal.querySelector(".modal__close-btn");
 
-// Creates the elements of the New Post Button (close button and two inputs) and assigns them their respective values in the HTML file
+// Creates the elements of the New Post Modal (close button and two inputs) and assigns them their respective values in the HTML file
 //newPostModal is a new modal
 const newPostModal = document.querySelector("#new-post-modal");
 const nameInput = newPostModal.querySelector("#new-post-link-input");
 const linkInput = newPostModal.querySelector("#new-post-caption-input");
 const newPostButton = document.querySelector(".profile__add-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
-
-const profileNameEl = document.querySelector(".profile__name");
-const profileDescriptionEl = document.querySelector(".profile__description");
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
