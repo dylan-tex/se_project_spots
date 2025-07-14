@@ -94,3 +94,8 @@ function handleAddCardSubmit(evt) {
 // Made these event listeners more clear
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
+
+initialCards.forEach(function (item) {
+  console.log(item.name);
+  console.log(item.link);
+});
