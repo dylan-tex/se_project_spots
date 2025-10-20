@@ -49,6 +49,9 @@ const linkInput = newPostModal.querySelector("#new-post-caption-input");
 const newPostButton = document.querySelector(".profile__add-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
+const cardTemplate = document.querySelector("#card-template");
+//left off here
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -96,6 +99,8 @@ editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  //console.log(item.name);
+  // console.log(item.link);
+  // this was creating a direct output but not creating an object
+  console.log(item);
 });
