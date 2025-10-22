@@ -49,8 +49,21 @@ const linkInput = newPostModal.querySelector("#new-post-caption-input");
 const newPostButton = document.querySelector(".profile__add-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
-const cardTemplate = document.querySelector("#card-template");
-//left off here
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+
+function getCardElement(data) {
+  //console.log(data);
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+  return cardElement;
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -102,5 +115,5 @@ initialCards.forEach(function (item) {
   //console.log(item.name);
   // console.log(item.link);
   // this was creating a direct output but not creating an object
-  console.log(item);
+  console.log(getCardElement(item));
 });
