@@ -53,6 +53,8 @@ const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
+const cardsList = document.querySelector(".cards__list");
+
 function getCardElement(data) {
   //console.log(data);
   const cardElement = cardTemplate.cloneNode(true);
@@ -115,5 +117,8 @@ initialCards.forEach(function (item) {
   //console.log(item.name);
   // console.log(item.link);
   // this was creating a direct output but not creating an object
-  console.log(getCardElement(item));
+  const cardElement = getCardElement(item);
+
+  // may run into some issues with this per video walk through appending here vs prepending however prepending they end up in reverse order.
+  cardsList.append(cardElement);
 });
