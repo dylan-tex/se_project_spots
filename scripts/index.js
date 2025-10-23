@@ -44,8 +44,8 @@ const editProfileModalCloseBtn =
 // Creates the elements of the New Post Modal (close button and two inputs) and assigns them their respective values in the HTML file
 //newPostModal is a new modal
 const newPostModal = document.querySelector("#new-post-modal");
-const nameInput = newPostModal.querySelector("#new-post-link-input");
-const linkInput = newPostModal.querySelector("#new-post-caption-input");
+const captionInput = newPostModal.querySelector("#new-post-caption-input");
+const linkInput = newPostModal.querySelector("#new-post-link-input");
 const newPostButton = document.querySelector(".profile__add-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
@@ -103,9 +103,23 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
   /* this is useful to determine if the newPostModal is working properly*/
-
+  /*
   console.log(nameInput.value);
   console.log(linkInput.value);
+  */
+
+  //// Create a new card object from the input values.
+  //1:33 into Stage 8 Part 3 Video
+  const inputValues = {
+    name: captionInput.value,
+    link: linkInput.value,
+  };
+
+  //// Create a new card element using the getCardElement function.
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+  //////
+
   closeModal(newPostModal);
 }
 
