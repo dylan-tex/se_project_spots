@@ -33,8 +33,20 @@
   cursor: pointer;
 }
 
+/* Liked state for the like button */
+.card__like-btn_liked {
+  background-image: url(../images/like-active.svg);
+  opacity: 100%;
+}
+
+/* Hover effect for the like button */
 .card__like-btn:hover {
   opacity: 100%;
+}
+
+/* Hover effect for the liked state of the like button */
+.card__like-btn_liked:hover {
+  opacity: 40%;
 }
 
 .card__title {
