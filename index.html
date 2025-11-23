@@ -120,16 +120,37 @@
 
       <!-- Preview Modal-->
       <div class="modal modal_is-opened" id="preview-modal">
-        <div class="modal__container">
+        <div class="modal__image-container">
           <img
             src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
             alt=""
             class="modal__image"
           />
           <p class="modal__caption">Golden Gate Bridge</p>
-          <button type="button" class="modal__close-btn">
+          <button
+            type="button"
+            class="modal__close-btn modal__close_type_preview"
+          >
             <!-- I checked the close icon to ensure it is the correct close icon. I downloaded it again selecting the darkened x icon-->
-            <img src="images/close-icon.svg" alt="Close" class="close-icon" />
+            <svg
+              class="close-icon"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.4853 28.4854L28.4853 12.4854"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M28.4853 28.4854L12.4853 12.4854"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
           </button>
         </div>
       </div>
