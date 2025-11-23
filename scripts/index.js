@@ -53,6 +53,12 @@ const linkInput = newPostModal.querySelector("#new-post-link-input");
 const newPostButton = document.querySelector(".profile__add-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
+// Creates the elements of the Preview Modal (close button, image and caption) and assigns them the corresponding values in the first object with the class preview-modal in the HTML file
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+const previewImageEl = previewModal.querySelector(".modal__image");
+const previewCaptionEl = previewModal.querySelector(".modal__caption");
+
 // Selects the card template from the HTML file.
 const cardTemplate = document
   .querySelector("#card-template")
@@ -85,6 +91,14 @@ function getCardElement(data) {
     cardElement = null;
   });
 
+  // Add event listener for opening the preview modal when the card image is clicked.
+  cardImageEl.addEventListener("click", () => {
+    previewImageEl.src = data.link;
+    previewImageEl.alt = data.name;
+    previewCaptionEl.textContent = data.name;
+    openModal(previewModal);
+  });
+
   return cardElement;
 }
 
@@ -115,6 +129,9 @@ profileEditButton.addEventListener("click", editProfile);
 editProfileModalCloseBtn.addEventListener("click", () =>
   closeModal(editProfileModal)
 );
+
+// Event listeners for opening and closing the preview modal.
+previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 // Event listeners for opening and closing the new post modal.
 newPostButton.addEventListener("click", () => openModal(newPostModal));
