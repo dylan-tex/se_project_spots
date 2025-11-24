@@ -88,7 +88,6 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardElement.remove();
-    cardElement = null;
   });
 
   // Add event listener for opening the preview modal when the card image is clicked.
@@ -165,6 +164,9 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
+
+  // Clear the new post form inputs
+  evt.target.reset();
 }
 
 // Attach the form submission handler to the edit profile form.
