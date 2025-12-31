@@ -181,6 +181,7 @@ initialCards.forEach(function (item) {
   cardsList.append(cardElement);
 });
 
+/*
 // Hide empty error spans
 const errorSpans = document.querySelectorAll(".modal__error");
 
@@ -190,3 +191,4 @@ errorSpans.forEach(function (span) {
     span.style.display = "none";
   }
 });
+*/
