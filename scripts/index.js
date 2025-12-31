@@ -180,3 +180,13 @@ initialCards.forEach(function (item) {
   // Append the card element to the cards list.
   cardsList.append(cardElement);
 });
+
+// Hide empty error spans
+const errorSpans = document.querySelectorAll(".modal__error");
+
+// Iterate through each error span and hide it if it's empty.
+errorSpans.forEach(function (span) {
+  if (span.textContent.trim() === "") {
+    span.style.display = "none";
+  }
+});
