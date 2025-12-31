@@ -103,13 +103,16 @@
 
 .modal__error {
   display: block;
-  color: red;
-  font-family: Poppins;
+  color: #ff0000b2;
+  font-family: Poppins, Arial, sans-serif;
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
   line-height: 110.00000000000001%;
   letter-spacing: 0%;
+  width: 630px;
+  height: 18px;
+  opacity: 1;
 }
 
 .modal__submit-btn {
