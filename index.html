@@ -68,8 +68,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                minlength="2"
+                maxlength="40"
                 required
               />
+              <span class="modal__error"></span>
             </label>
             <label class="modal__label">
               Description
@@ -78,8 +81,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                minlength="2"
+                maxlength="200"
                 required
               />
+              <span class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -97,11 +103,12 @@
               Image Link
               <input
                 id="new-post-link-input"
-                type="text"
+                type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
                 required
               />
+              <span class="modal__error"></span>
             </label>
             <label class="modal__label">
               Caption
@@ -110,8 +117,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                minlength="2"
+                maxlength="30"
                 required
               />
+              <span class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
