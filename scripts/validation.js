@@ -1,4 +1,14 @@
-const showInputError = (formEl, inputElement, errorMessage) => {};
+const showInputError = (formEl, inputElement, errorMessage) => {
+  const errorMsgEl = formEl.querySelector(`#${inputElement.id}-error`);
+  errorMsgEl.textContent = errorMessage;
+  inputElement.classList.add("modal__input_type_error");
+};
+
+const checkInputValidity = (formEl, inputElement) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formEl, inputElement, inputElement.validationMessage);
+  }
+};
 
 const setEventListeners = (formEl) => {
   console.log("Form element:", formEl);
