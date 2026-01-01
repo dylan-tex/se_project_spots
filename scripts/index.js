@@ -66,6 +66,7 @@ const cardTemplate = document
 
 // Selects the container where the cards will be added.
 const cardsList = document.querySelector(".cards__list");
+const modals = document.querySelectorAll(".modal");
 
 // Function to create a card element from the template and populate it with data.
 function getCardElement(data) {
@@ -142,6 +143,15 @@ previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 // Event listeners for opening and closing the new post modal.
 newPostButton.addEventListener("click", () => openModal(newPostModal));
 newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
+
+// Close modal when clicking on the overlay background.
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
 
 // Function to handle the submission of the edit profile form.
 function handleEditProfileSubmit(evt) {
