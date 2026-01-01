@@ -1,1 +1,3 @@
-console.log("working");
+const enableValidation = () => {
+  // Example validation function
+};
