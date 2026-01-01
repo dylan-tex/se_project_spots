@@ -180,6 +180,16 @@ function handleAddCardSubmit(evt) {
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
 
+// Close the currently open modal when Escape is pressed
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+});
+
 initialCards.forEach(function (item) {
   // Creates a Card element for each item in the initialCards array.
   const cardElement = getCardElement(item);
