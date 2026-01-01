@@ -10,7 +10,7 @@ const settings = {
 };
 
 // Function to show input error messages
-const showInputError = (formEl, inputElement, errorMessage) => {
+const showInputError = (formEl, inputElement, errorMessage, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputElement.id}-error`);
 
   // If no error message element is found, exit the function
@@ -22,11 +22,11 @@ const showInputError = (formEl, inputElement, errorMessage) => {
   // Ensure the error message is visible
   errorMsgEl.style.display = ""; // ensure it shows if previously hidden
 
-  inputElement.classList.add("modal__input_type_error");
+  inputElement.classList.add(config.inputErrorClass);
 };
 
 // Function to hide input error messages
-const hideInputError = (formEl, inputElement) => {
+const hideInputError = (formEl, inputElement, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputElement.id}-error`);
 
   // If no error message element is found, exit the function
@@ -36,17 +36,22 @@ const hideInputError = (formEl, inputElement) => {
   errorMsgEl.textContent = "";
   errorMsgEl.style.display = "none";
 
-  inputElement.classList.remove("modal__input_type_error");
+  inputElement.classList.remove(config.inputErrorClass);
 };
 
 // Function to check the validity of an input element
-const checkInputValidity = (formEl, inputElement) => {
+const checkInputValidity = (formEl, inputElement, config) => {
   //  Check if the input element is valid. If it is not valid, show the error message.
   //  If it is valid, hide any existing error message.
   if (!inputElement.validity.valid) {
-    showInputError(formEl, inputElement, inputElement.validationMessage);
+    showInputError(
+      formEl,
+      inputElement,
+      inputElement.validationMessage,
+      config
+    );
   } else {
-    hideInputError(formEl, inputElement);
+    hideInputError(formEl, inputElement, config);
   }
 };
 
@@ -58,24 +63,22 @@ const hasInvalidInput = (inputList) => {
 };
 
 // Function to toggle the state of the submit button
-const toggleButtonState = (inputList, buttonEl) => {
+const toggleButtonState = (inputList, buttonEl, config) => {
   console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonEl.disabled = true;
-    buttonEl.classList.add("modal__submit-btn_disabled");
+    buttonEl.classList.add(config.inactiveButtonClass);
   } else {
     buttonEl.disabled = false;
-    buttonEl.classList.remove("modal__submit-btn_disabled");
+    buttonEl.classList.remove(config.inactiveButtonClass);
   }
 };
 
-const resetValidation = (formEl, inputList) => {
+const resetValidation = (formEl, inputList, config) => {
   inputList.forEach((input) => {
-    hideInputError(formEl, input);
+    hideInputError(formEl, input, config);
   });
 };
-
-// TO - DO: Use the settings object to replace hardcoded class names and selectors
 
 // Function to set event listeners on form inputs
 const setEventListeners = (formEl, config) => {
