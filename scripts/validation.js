@@ -58,6 +58,12 @@ const toggleButtonState = (inputList, buttonEl) => {
   }
 };
 
+const resetValidation = (formEl, inputList) => {
+  inputList.forEach((input) => {
+    hideInputError(formEl, input);
+  });
+};
+
 // Function to set event listeners on form inputs
 const setEventListeners = (formEl) => {
   // Log the form element for debugging, which was passed as an argument
