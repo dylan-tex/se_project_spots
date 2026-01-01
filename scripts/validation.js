@@ -39,6 +39,20 @@ const checkInputValidity = (formEl, inputElement) => {
   }
 };
 
+// Function to determine if any input in the list is invalid
+const hasInvalidInput = (inputList) => {
+  return inputList.some((input) => {
+    return !input.validity.valid;
+  });
+};
+
+// Function to toggle the state of the submit button
+const toggleButtonState = (inputList, buttonEl) => {
+  console.log(hasInvalidInput(inputList));
+  //if (hasInvalidInput(inputList)) {
+  //}
+};
+
 // Function to set event listeners on form inputs
 const setEventListeners = (formEl) => {
   // Log the form element for debugging, which was passed as an argument
@@ -55,21 +69,21 @@ const setEventListeners = (formEl) => {
   console.log(buttonElement);
 
   // To - Do: Implement toggleButtonState function
-  //toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement);
 
   // Add input event listeners to each input element
   inputList.forEach((inputElement) => {
-    // Log the target input element for debugging
+    // Log the "target" for debugging
     console.log("target");
 
-    // Add the input event listener
+    // Add the input event listener and its callback function and check validity of each input element
     inputElement.addEventListener("input", function () {
       // Log the input event for debugging
       console.log("input event");
 
       // Check the validity of the input element
       checkInputValidity(formEl, inputElement);
-      //toggleButtonState(inputList, buttonElement);
+      toggleButtonState(inputList, buttonElement);
     });
   });
 };
