@@ -75,6 +75,8 @@ const resetValidation = (formEl, inputList) => {
   });
 };
 
+// TO - DO: Use the settings object to replace hardcoded class names and selectors
+
 // Function to set event listeners on form inputs
 const setEventListeners = (formEl, config) => {
   // Log the form element for debugging, which was passed as an argument
