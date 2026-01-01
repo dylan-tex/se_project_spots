@@ -1,6 +1,4 @@
-const checkInputValidity = (formEl, inputElement) => {
-  console.log(inputElement.validity);
-};
+const showInputError = (formEl, inputElement, errorMessage) => {};
 
 const setEventListeners = (formEl) => {
   console.log("Form element:", formEl);
