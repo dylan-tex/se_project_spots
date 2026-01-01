@@ -1,3 +1,14 @@
+// Declaring a configuration object that contains the
+// necessary classes and selectors.
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-btn",
+  inactiveButtonClass: "modal__submit-btn_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error",
+};
+
 // Function to show input error messages
 const showInputError = (formEl, inputElement, errorMessage) => {
   const errorMsgEl = formEl.querySelector(`#${inputElement.id}-error`);
