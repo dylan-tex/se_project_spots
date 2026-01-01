@@ -49,8 +49,13 @@ const hasInvalidInput = (inputList) => {
 // Function to toggle the state of the submit button
 const toggleButtonState = (inputList, buttonEl) => {
   console.log(hasInvalidInput(inputList));
-  //if (hasInvalidInput(inputList)) {
-  //}
+  if (hasInvalidInput(inputList)) {
+    buttonEl.disabled = true;
+    buttonEl.classList.add("modal__submit-btn_disabled");
+  } else {
+    buttonEl.disabled = false;
+    buttonEl.classList.remove("modal__submit-btn_disabled");
+  }
 };
 
 // Function to set event listeners on form inputs
