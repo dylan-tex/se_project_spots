@@ -92,6 +92,10 @@
   color: #212121;
 }
 
+.modal__input_type_error {
+  border: 1px solid #ff000099;
+}
+
 .modal__input::placeholder {
   font-weight: 500; /* Regular weight instead of 500 */
   color: #2121214d;
@@ -227,7 +231,7 @@
     font-size: 16px;
   }
 
-  .modal__image {
+  .modal__input_ .modal__input_ .modal__image {
     max-width: unset;
   }
 }
