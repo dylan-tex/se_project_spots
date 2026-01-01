@@ -134,6 +134,10 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
 }
 
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+}
+
 .modal__submit-btn:hover {
   cursor: pointer;
   background: #212121cc;
