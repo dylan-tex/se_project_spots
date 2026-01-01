@@ -119,4 +119,4 @@ const enableValidation = () => {
   });
 };
 
-enableValidation();
+enableValidation(settings);
