@@ -111,7 +111,7 @@ const setEventListeners = (formEl) => {
 };
 
 // Form Validation Script
-const enableValidation = () => {
+const enableValidation = (config) => {
   const formlist = document.querySelectorAll(".modal__form");
 
   formlist.forEach((formEl) => {
