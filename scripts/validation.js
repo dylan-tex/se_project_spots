@@ -66,7 +66,6 @@ const hasInvalidInput = (inputList) => {
 
 // Function to toggle the state of the submit button
 const toggleButtonState = (inputList, buttonEl, config) => {
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonEl.disabled = true;
     buttonEl.classList.add(config.inactiveButtonClass);
@@ -84,32 +83,17 @@ const resetValidation = (formEl, inputList, config) => {
 
 // Function to set event listeners on form inputs
 const setEventListeners = (formEl, config) => {
-  // Log the form element for debugging, which was passed as an argument
-  console.log("Form element:", formEl);
-
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
 
-  // Log the found input elements for debugging, which were declared above
-  console.log("Found inputs:", inputList);
-
   const buttonElement = formEl.querySelector(config.submitButtonSelector);
-
-  // Log the button element for debugging
-  console.log(buttonElement);
 
   // To - Do: Implement toggleButtonState function
   toggleButtonState(inputList, buttonElement, config);
 
   // Add input event listeners to each input element
   inputList.forEach((inputElement) => {
-    // Log the "target" for debugging
-    console.log("target");
-
     // Add the input event listener and its callback function and check validity of each input element
     inputElement.addEventListener("input", function () {
-      // Log the input event for debugging
-      console.log("input event");
-
       // Check the validity of the input element
       checkInputValidity(formEl, inputElement, config);
       toggleButtonState(inputList, buttonElement, config);
