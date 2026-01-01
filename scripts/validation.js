@@ -76,16 +76,16 @@ const resetValidation = (formEl, inputList) => {
 };
 
 // Function to set event listeners on form inputs
-const setEventListeners = (formEl) => {
+const setEventListeners = (formEl, config) => {
   // Log the form element for debugging, which was passed as an argument
   console.log("Form element:", formEl);
 
-  const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
+  const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
 
   // Log the found input elements for debugging, which were declared above
   console.log("Found inputs:", inputList);
 
-  const buttonElement = formEl.querySelector(".modal__submit-btn");
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
 
   // Log the button element for debugging
   console.log(buttonElement);
@@ -115,7 +115,7 @@ const enableValidation = (config) => {
   const formlist = document.querySelectorAll(config.formSelector);
 
   formlist.forEach((formEl) => {
-    setEventListeners(formEl);
+    setEventListeners(formEl, config);
   });
 };
 
