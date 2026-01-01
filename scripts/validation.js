@@ -91,7 +91,7 @@ const setEventListeners = (formEl, config) => {
   console.log(buttonElement);
 
   // To - Do: Implement toggleButtonState function
-  toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement, config);
 
   // Add input event listeners to each input element
   inputList.forEach((inputElement) => {
@@ -104,8 +104,8 @@ const setEventListeners = (formEl, config) => {
       console.log("input event");
 
       // Check the validity of the input element
-      checkInputValidity(formEl, inputElement);
-      toggleButtonState(inputList, buttonElement);
+      checkInputValidity(formEl, inputElement, config);
+      toggleButtonState(inputList, buttonElement, config);
     });
   });
 };
