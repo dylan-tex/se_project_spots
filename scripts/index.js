@@ -113,10 +113,11 @@ function editProfile() {
   openModal(editProfileModal);
 
   // Reset validation state for the edit profile modal.
-  resetValidation(editProfileModal, [
-    editProfileNameInput,
-    editProfileDescriptionInput,
-  ]);
+  resetValidation(
+    editProfileModal,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
 
   // Pre-fill the input fields with the current profile name and description.
   editProfileNameInput.value = profileNameEl.textContent;
