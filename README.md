@@ -1,4 +1,4 @@
-# Project 4: Spots
+# Project Spots
 
 ### Overview
 
@@ -11,55 +11,45 @@
 - [Instructions on Deployment](#instructions-on-deployment)
 - [Plans on Improving the Project](#plans-on-improving-the-project)
 
-[Link to my video walk-through](https://www.youtube.com/watch?v=CD4nkn_C6rM)
+[Link to my video walk-through](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci)
 
 [Link to my project on Pages](https://dylan-tex.github.io/se_project_spots/)
 
 ## Intro
 
-This project made heavy use of javascript and the DOM. I also was able to use GitHub branches to work through challenging problems. The **Edit Profile** button was impelemented. And the **New Post** button was started.
+This project made heavy use of javascript, the DOM, validation, Figma, advanced GitHub for testing new updates, and more.
+
+In this most recent update, form validation, multiple javascript files, object declaration to simplify references to classses and modifers were used.
 
 ### GitHub Branches
 
-GitHub branches are a major game changer. Without branches-- each saved change in a project could potentially corrupt the project if there are errors and make it difficult to "go back in time." However GitHub branches you can compare the logs between branches and even differences in the code between branches.
+GitHub branches allow you to test your code while preserving prior versions of it on another branch. Using advance Git commands you can also merge branches, go back to a previous 'commit' and more.
 
-Two useful GitHub commands are:
+I created thre branches in this project and they were:
 
-`git diff branch1..branch2`
+- main
+- main-backup
+- test-branch
 
-and
+There were several instances where merge conlflicts came up, and also where I had to overwrite one branch with another.
 
-`git log branch1..branch2`
+Overwriting a branch with another has risks, but I found it necessary in some cases.
 
-where `branch1` and `branch2` should be replaced by the names of the branches themselves.
+The cose to overwrite one branch with another is:
 
-The first command will tell you the individual lines of code which differ between the branches and the second will tell you the differences in the commits (which is an overview of the differences).
+`git reset --hard origin/test-branch`
 
-I did find that occasionally GitHub wouldn't detect differences between files in the branches with the commands above.
+followed by
 
-To individually compare files in GitHub use this command:
+`git push --force-with-lease origin main`
 
-`git diff branch1..branch2 -- filename.ext`
+to force push it to the remote repository.
 
-where `filename.ext` should be replaced by the actual filename.
-
-If a file is within a directory (folder) wiuthin the project, you may have to reference the folder and the file and compare the differences:
-
-`git diff branch1..branch2 -- folder/filename.ext`
-
-To overwrite one branch with another branch-- navigate to the branch you would like to be overwritten with the `git switch branch` command where `branch` is the name of the branch to be overwritten.
-
-Then use the `get merge overwritingBranch` to overwrite the branch you are on where `overwritingBranch` is the branch which will replace or overwrite your current branch.
-
-Sometimes however this merge comnand will not detect any differences in the branches, in which case you have to overwrite files directly using the command
-
-`git checkout branchOverwriting -- file.ext`
-
-After doing this make sure to merge the branches so that one branch is not ahead by a commit.
+For a full list of useful command in Git, see [GitHub Commands](https://git-scm.com/docs)
 
 ### BEM Methodology
 
-Previously deployed but now increasingly important is BEM methodolgy. "Block Element Modifier" Metholodgy helps developers navigate through each others' code. And in this project--- with it's multiple layers of complexity-- was essential .
+"Block Element Modifier" Metholodgy helps developers navigate through each others' code.
 
 ### What is the DOM?
 
@@ -67,28 +57,27 @@ The DOM is the Document Object Model where by objects are instances of classes a
 
 ### Modal Class
 
-The objects of the modals class where regulary referenced through DOM integration. It also utilized transitions when opening and closing the modals. Modals are a class we defined that is referenced in the DOM often and the purpose of the modal is to edit page the user sees. It gathers user input and either edits the page or logs text to the console.
+The objects of the modals class where regulary referenced through DOM integration.
 
-One example of the use of transitions and a block modifier is seen here:
+An example of this is the openModal function in our JS, seen below, which is passed a modal object declared in the JS. It adds the class 'modal_is-opened' to dynamically adjust the appearance of the modal on the page.
 
 ```
-.modal_is-opened {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity 0.5s linear;
+function openModal(modal) {
+  // Add a class to indicate the modal is opened.
+  modal.classList.add("modal_is-opened");
 }
 ```
-
-In conjuction with the transition declaration in the modal block itself, this line of dictates how the modal transition occurs during open and close.
 
 ### Figma
 
 This was the Figma file used to model the project. Understanding how to interpret Figma continued to play a major role in this project.
 
-- [Link to the project on Figma](https://www.figma.com/design/rGnA0eBcxYVOpA4bxmqlyu/Sprint-4-Project-Spots---March-2025?node-id=0-1&p=f)
+- [Link to the project on Figma](https://www.figma.com/file/jFtXsDr4XOyebKcgjyXN6W/Sprint-6-Project%3A-Spots?type=design&mode=design&t=mOmexgRdnrmMll3T-0)
 
 - Using the `option` key to find distances between parts of the layout
-- Identifying fonts and font sizes
+- Identifying fonts, layouts, and colors from the Figma utilizing the properties panel, seen below:
+
+![Figma](images/figma-properties.png)
 
 This project also made use of responsive design for mobile devices, deploying code such as the following:
 
