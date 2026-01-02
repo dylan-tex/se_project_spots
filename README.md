@@ -24,13 +24,13 @@ project and some challenges I faced while building it.
 
 This project made heavy use of JS, the DOM, validation, Figma, advanced Git, and more.
 
-In this most recent update I implemented form validation, added a second JS file for validation, and utilized object declaration to simplify references to classses and modifers rather than relying on object literals.
+In this most recent update I implemented form validation, added a second JS file for validation, and utilized object declaration to simplify references to classses and selectors rather than relying on object literals.
 
 ### GitHub Branches
 
 GitHub branches allow you to test your code while preserving prior versions of it on another branch. Using advance Git commands you can also merge branches, go back to a previous 'commit' and more.
 
-I created thre branches in this project and they were:
+I created three branches in this project and they were:
 
 - main
 - main-backup
