@@ -52,6 +52,7 @@ const captionInput = newPostModal.querySelector("#new-post-caption-input");
 const linkInput = newPostModal.querySelector("#new-post-link-input");
 const newPostButton = document.querySelector(".profile__add-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+const newPostInputs = [captionInput, linkInput];
 
 // Creates the elements of the Preview Modal (close button, image and caption) and assigns them the corresponding values in the first object with the class preview-modal in the HTML file
 const previewModal = document.querySelector("#preview-modal");
@@ -131,6 +132,14 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+function resetNewPostFormState() {
+  const newPostSubmitBtn = newPostModal.querySelector(
+    settings.submitButtonSelector
+  );
+  resetValidation(newPostModal, newPostInputs, settings);
+  toggleButtonState(newPostInputs, newPostSubmitBtn, settings);
+}
+
 // Event listeners for opening and closing the edit profile modal.
 profileEditButton.addEventListener("click", editProfile);
 editProfileModalCloseBtn.addEventListener("click", () =>
@@ -141,7 +150,10 @@ editProfileModalCloseBtn.addEventListener("click", () =>
 previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 // Event listeners for opening and closing the new post modal.
-newPostButton.addEventListener("click", () => openModal(newPostModal));
+newPostButton.addEventListener("click", () => {
+  resetNewPostFormState();
+  openModal(newPostModal);
+});
 newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
 
 // Close modal when clicking on the overlay background.
@@ -151,6 +163,16 @@ modals.forEach((modal) => {
       closeModal(modal);
     }
   });
+});
+
+// Close the currently open modal when Escape is pressed
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
 });
 
 // Function to handle the submission of the edit profile form.
@@ -184,21 +206,12 @@ function handleAddCardSubmit(evt) {
 
   // Clear the new post form inputs
   evt.target.reset();
+  resetNewPostFormState();
 }
 
 // Attach the form submission handler to the edit profile form.
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
-
-// Close the currently open modal when Escape is pressed
-document.addEventListener("keydown", (evt) => {
-  if (evt.key === "Escape") {
-    const openedModal = document.querySelector(".modal_is-opened");
-    if (openedModal) {
-      closeModal(openedModal);
-    }
-  }
-});
 
 initialCards.forEach(function (item) {
   // Creates a Card element for each item in the initialCards array.
