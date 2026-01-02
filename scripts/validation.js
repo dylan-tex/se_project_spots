@@ -1,5 +1,3 @@
-// last version of the code with console logs for debugging
-
 // Declaring a configuration object that contains the
 // necessary classes and selectors.
 const settings = {
