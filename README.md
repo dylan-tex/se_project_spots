@@ -26,6 +26,8 @@ This project made heavy use of JS, the DOM, validation, Figma, advanced Git, and
 
 In this most recent update I implemented form validation, added a second JS file for validation, and utilized object declaration to simplify references to classses and selectors rather than relying on object literals.
 
+![Visual Studio Code](images/visual-studio-code.jpeg)
+
 ### GitHub Branches
 
 GitHub branches allow you to test your code while preserving prior versions of it on another branch. Using advance Git commands you can also merge branches, go back to a previous 'commit' and more.
@@ -35,6 +37,8 @@ I created three branches in this project and they were:
 - main
 - main-backup
 - test-branch
+
+![Git Branches](images/git-branches_visual-studio.jpeg)
 
 There were several instances where merge conlflicts came up, and also where I had to overwrite one branch with another.
 
@@ -55,6 +59,8 @@ For a full list of useful command in Git, see [GitHub Commands](https://git-scm.
 ### Figma
 
 This was the Figma file used to model the project. Understanding how to interpret Figma continued to play a major role in this project.
+
+![Figma](images/figma-layout.jpeg)
 
 - [Link to the project on Figma](https://www.figma.com/file/jFtXsDr4XOyebKcgjyXN6W/Sprint-6-Project%3A-Spots?type=design&mode=design&t=mOmexgRdnrmMll3T-0)
 
