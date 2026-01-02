@@ -16,6 +16,8 @@ Check out
 [this video](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci), where I describe my
 project and some challenges I faced while building it.
 
+[![Video Overview](images/video_banner_spots_stage_9.png)](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci)
+
 [Link to my project on Pages](https://dylan-tex.github.io/se_project_spots/)
 
 ## Intro
