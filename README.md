@@ -12,7 +12,9 @@
 - [Instructions on Deployment](#instructions-on-deployment)
 - [Plans on Improving the Project](#plans-on-improving-the-project)
 
-[Link to my project on GitHub Pages](https://dylan-tex.github.io/se_project_spots/)
+[Link to my project](https://dylan-tex.github.io/se_project_spots/) on GitHub Pages
+
+[![Link to Project on Pages](images/spots-project.jpeg)](https://dylan-tex.github.io/se_project_spots/)
 
 Check out
 [this video](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci), where I describe my
