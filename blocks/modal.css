@@ -54,12 +54,13 @@
   opacity: revert;
 }
 
-/*When hovering over the close button it darkens*/
+/*When hovering over the close button it goes from grey to black*/
 .modal__close-btn:hover {
   opacity: 100%;
   cursor: pointer;
 }
 
+/*When hovering over the preview close button it goes from white to grey*/
 .modal__close_type_preview:hover {
   opacity: 40%;
 }
