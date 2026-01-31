@@ -51,7 +51,7 @@
   opacity: 0.4;
 }
 
-.modal__close_type_preview {
+.modal__close-btn_type_preview {
   top: 0;
   right: -32.5px;
   stroke: white;
@@ -65,7 +65,7 @@
 }
 
 /*When hovering over the preview close button it goes from white to grey*/
-.modal__close_type_preview:hover {
+.modal__close-btn_type_preview:hover {
   opacity: 0.4;
 }
 
