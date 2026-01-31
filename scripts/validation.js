@@ -48,7 +48,7 @@ const checkInputValidity = (formEl, inputElement, config) => {
       formEl,
       inputElement,
       inputElement.validationMessage,
-      config
+      config,
     );
   } else {
     hideInputError(formEl, inputElement, config);
@@ -101,9 +101,9 @@ const setEventListeners = (formEl, config) => {
 
 // Form Validation Script
 const enableValidation = (config) => {
-  const formlist = document.querySelectorAll(config.formSelector);
+  const formList = document.querySelectorAll(config.formSelector);
 
-  formlist.forEach((formEl) => {
+  formList.forEach((formEl) => {
     setEventListeners(formEl, config);
   });
 };

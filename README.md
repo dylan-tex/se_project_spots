@@ -124,9 +124,9 @@ Also, we wanted to ensure that the New Post Modal was not being used to create e
 ```
 // Form Validation Script
 const enableValidation = (config) => {
-  const formlist = document.querySelectorAll(config.formSelector);
+  const formList = document.querySelectorAll(config.formSelector);
 
-  formlist.forEach((formEl) => {
+  formList.forEach((formEl) => {
     setEventListeners(formEl, config);
   });
 };

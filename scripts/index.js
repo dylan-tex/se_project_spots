@@ -107,6 +107,8 @@ function getCardElement(data) {
 function openModal(modal) {
   // Add a class to indicate the modal is opened.
   modal.classList.add("modal_is-opened");
+  // Add the Escape key listener when modal opens
+  document.addEventListener("keydown", handleEscape);
 }
 
 // Function to open the edit profile modal and pre-fill the input fields with the current profile information.
@@ -130,6 +132,8 @@ function editProfile() {
 function closeModal(modal) {
   // Remove the class that indicates the modal is opened.
   modal.classList.remove("modal_is-opened");
+  // Remove the Escape key listener when modal closes
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function resetNewPostFormState() {
@@ -166,14 +170,14 @@ modals.forEach((modal) => {
 });
 
 // Close the currently open modal when Escape is pressed
-document.addEventListener("keydown", (evt) => {
+function handleEscape(evt) {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal_is-opened");
     if (openedModal) {
       closeModal(openedModal);
     }
   }
-});
+}
 
 // Function to handle the submission of the edit profile form.
 function handleEditProfileSubmit(evt) {
