@@ -13,14 +13,18 @@
   visibility: hidden;
 
   opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
+  transition:
+    visibility 0s 0.5s,
+    opacity 0.5s linear;
 }
 
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
   /* This is necessary otherwise it doesn't fade in*/
-  transition: visibility 0s, opacity 0.5s linear;
+  transition:
+    visibility 0s,
+    opacity 0.5s linear;
 }
 
 .modal__container {
@@ -44,7 +48,7 @@
   background-color: transparent; /* Make button's background invisible if needed */
   border: none; /* Remove any borders */
   cursor: pointer; /* Pointer cursor on hover */
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .modal__close_type_preview {
@@ -56,13 +60,13 @@
 
 /*When hovering over the close button it goes from grey to black*/
 .modal__close-btn:hover {
-  opacity: 100%;
+  opacity: 1;
   cursor: pointer;
 }
 
 /*When hovering over the preview close button it goes from white to grey*/
 .modal__close_type_preview:hover {
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .modal__title {
