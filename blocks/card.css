@@ -9,7 +9,7 @@
 
 .card__image {
   height: 413px;
-  width: 1;
+  width: 100%;
   object-fit: cover;
   display: block;
   border-radius: 8px;
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1;
+  width: 100%;
 }
 
 .card__delete-btn {
@@ -79,17 +79,17 @@
 /* Liked state for the like button */
 .card__like-btn_liked {
   background-image: url(../images/like-active.svg);
-  opacity: 1;
+  opacity: 100%;
 }
 
 /* Hover effect for the like button */
 .card__like-btn:hover {
-  opacity: 1;
+  opacity: 100%;
 }
 
 /* Hover effect for the liked state of the like button */
 .card__like-btn_liked:hover {
-  opacity: 0.4;
+  opacity: 40%;
 }
 
 .card__title {
