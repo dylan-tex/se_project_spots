@@ -36,11 +36,11 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 // Creates the elements of the Edit Profile Modal (close button and two inputs ) and assigns them the corresponding values in the first object with the class edit-profile-modal in the HTML file
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 
 const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const editProfileModalCloseBtn =
@@ -118,7 +118,7 @@ function editProfile() {
   resetValidation(
     editProfileModal,
     [editProfileNameInput, editProfileDescriptionInput],
-    settings
+    settings,
   );
 
   // Pre-fill the input fields with the current profile name and description.
@@ -134,7 +134,7 @@ function closeModal(modal) {
 
 function resetNewPostFormState() {
   const newPostSubmitBtn = newPostModal.querySelector(
-    settings.submitButtonSelector
+    settings.submitButtonSelector,
   );
   resetValidation(newPostModal, newPostInputs, settings);
   toggleButtonState(newPostInputs, newPostSubmitBtn, settings);
@@ -143,7 +143,7 @@ function resetNewPostFormState() {
 // Event listeners for opening and closing the edit profile modal.
 profileEditButton.addEventListener("click", editProfile);
 editProfileModalCloseBtn.addEventListener("click", () =>
-  closeModal(editProfileModal)
+  closeModal(editProfileModal),
 );
 
 // Event listeners for opening and closing the preview modal.
@@ -151,7 +151,7 @@ previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 // Event listeners for opening and closing the new post modal.
 newPostButton.addEventListener("click", () => {
-  resetNewPostFormState();
+  //resetNewPostFormState(); this line was commented out so the form state would persist
   openModal(newPostModal);
 });
 newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
