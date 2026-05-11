@@ -11,18 +11,26 @@
     <meta name="author" content="Dylan Silver" />
     <meta name="keywords" content="HTML, CSS, web development, tutorials" />
     <!--<link rel="stylesheet" href="./pages/index.css" />-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="<%= require('../favicon.ico') %>"
+      type="image/x-icon"
+    />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="Spot Logo" class="header__logo" />
+        <img
+          src="<%= require('./images/logo.svg') %>"
+          alt="Spot Logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%= require('./images/avatar.jpg') %>"
             alt="Bessie Coleman"
             class="profile__avatar"
           />
@@ -30,11 +38,11 @@
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
-              <img src="./images/pencil.svg" alt="Pencil icon" />Edit Profile
+              <img src="<%= require('./images/pencil.svg') %>" alt="Pencil icon" />Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-btn">
-            <img src="./images/plus.svg" alt="Plus icon" />New Post
+            <img src="<%= require('./images/plus.svg') %>" alt="Plus icon" />New Post
           </button>
         </section>
         <section class="cards page__section">
@@ -57,7 +65,11 @@
         <div class="modal__container">
           <h2 class="modal__title">Edit profile</h2>
           <button type="button" class="modal__close-btn">
-            <img src="images/close-icon.svg" alt="Close" class="close-icon" />
+            <img
+              src="<%= require('./images/close-icon.svg') %>"
+              alt="Close"
+              class="close-icon"
+            />
           </button>
           <form name="edit-profile" class="modal__form" novalidate>
             <label class="modal__label">
@@ -98,7 +110,11 @@
           <h2 class="modal__title">New post</h2>
           <button type="button" class="modal__close-btn">
             <!-- I checked the close icon to ensure it is the correct close icon. I downloaded it again selecting the darkened x icon-->
-            <img src="images/close-icon.svg" alt="Close" class="close-icon" />
+            <img
+              src="<%= require('./images/close-icon.svg') %>"
+              alt="Close"
+              class="close-icon"
+            />
           </button>
           <form name="new-post" class="modal__new-post modal__form" novalidate>
             <label class="modal__label">
@@ -143,7 +159,7 @@
             class="modal__close-btn modal__close-btn_type_preview"
           >
             <img
-              src="images/close-icon-variant.svg"
+              src="<%= require('./images/close-icon-variant.svg') %>"
               alt="Close"
               class="close-icon"
             />
