@@ -1,4 +1,5 @@
 import "./index.css";
+import Api from "../scripts/Api.js";
 import {
   enableValidation,
   resetValidation,
@@ -36,6 +37,19 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+// Initialize the API instance
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "c774c627-8028-4f95-b060-1d47e3577177",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((cards) => {
+  console.log(cards);
+});
 
 // Selects the profile name and description elements from the HTML file
 const profileNameEl = document.querySelector(".profile__name");
