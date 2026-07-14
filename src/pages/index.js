@@ -7,6 +7,7 @@ import {
   toggleButtonState,
 } from "../scripts/validation.js";
 
+/* commenting out the initialCards array since we are now fetching the cards from the API instead of using hardcoded data
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -37,6 +38,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+*/
 
 // Initialize the API instance
 const api = new Api({
@@ -49,6 +51,13 @@ const api = new Api({
 
 api.getInitialCards().then((cards) => {
   console.log(cards);
+  cards.forEach(function (item) {
+    // Creates a Card element for each item in the cards array.
+    const cardElement = getCardElement(item);
+
+    // Append the card element to the cards list.
+    cardsList.append(cardElement);
+  });
 });
 
 // Selects the profile name and description elements from the HTML file
@@ -238,13 +247,5 @@ function handleAddCardSubmit(evt) {
 // Attach the form submission handler to the edit profile form.
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
-
-initialCards.forEach(function (item) {
-  // Creates a Card element for each item in the initialCards array.
-  const cardElement = getCardElement(item);
-
-  // Append the card element to the cards list.
-  cardsList.append(cardElement);
-});
 
 enableValidation(settings);
