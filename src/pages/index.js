@@ -49,16 +49,19 @@ const api = new Api({
   },
 });
 
-api.getInitialCards().then((cards) => {
-  console.log(cards);
-  cards.forEach(function (item) {
-    // Creates a Card element for each item in the cards array.
-    const cardElement = getCardElement(item);
+api
+  .getInitialCards()
+  .then((cards) => {
+    console.log(cards);
+    cards.forEach(function (item) {
+      // Creates a Card element for each item in the cards array.
+      const cardElement = getCardElement(item);
 
-    // Append the card element to the cards list.
-    cardsList.append(cardElement);
-  });
-});
+      // Append the card element to the cards list.
+      cardsList.append(cardElement);
+    });
+  })
+  .catch(console.error); // Log any errors that occur during the fetch operation
 
 // Selects the profile name and description elements from the HTML file
 const profileNameEl = document.querySelector(".profile__name");
