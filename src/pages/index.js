@@ -1,5 +1,6 @@
 import "./index.css";
 import Api from "../utils/Api.js";
+import cardImagePlaceholder from "../images/card-image-placeholder.svg";
 import {
   enableValidation,
   resetValidation,
@@ -50,14 +51,17 @@ const api = new Api({
 });
 
 api
-  .getInitialCards()
-  .then((cards) => {
+  .getAppInfo()
+  .then(([userInfo, cards]) => {
+    console.log(userInfo);
     console.log(cards);
-    cards.forEach(function (item) {
-      // Creates a Card element for each item in the cards array.
-      const cardElement = getCardElement(item);
+    // Update the profile name and description with the fetched user info.
+    //profileNameEl.textContent = userInfo.name;
+    //profileDescriptionEl.textContent = userInfo.about;
 
-      // Append the card element to the cards list.
+    // Create and append card elements for each item in the fetched cards array.
+    cards.forEach(function (item) {
+      const cardElement = getCardElement(item);
       cardsList.append(cardElement);
     });
   })
@@ -115,6 +119,11 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
+  // Fall back to a local placeholder if the card image fails to load (e.g. broken link).
+  cardImageEl.addEventListener("error", () => {
+    cardImageEl.src = cardImagePlaceholder;
+  });
+
   // Add event listener for the like button.
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
   cardLikeBtnEl.addEventListener("click", () => {
@@ -128,7 +137,7 @@ function getCardElement(data) {
 
   // Add event listener for opening the preview modal when the card image is clicked.
   cardImageEl.addEventListener("click", () => {
-    previewImageEl.src = data.link;
+    previewImageEl.src = cardImageEl.src;
     previewImageEl.alt = data.name;
     previewCaptionEl.textContent = data.name;
     openModal(previewModal);
@@ -217,12 +226,18 @@ function handleEscape(evt) {
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
 
-  // Update the profile name and description with the input values.
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  const profileData = {
+    name: editProfileNameInput.value,
+    about: editProfileDescriptionInput.value,
+  };
 
-  // Close the edit profile modal.
-  closeModal(editProfileModal);
+  api.editUserInfo(profileData)
+    .then((userInfo) => {
+      profileNameEl.textContent = userInfo.name;
+      profileDescriptionEl.textContent = userInfo.about;
+      closeModal(editProfileModal);
+    })
+    .catch(console.error);
 }
 
 // Function to handle the submission of the new post form.
