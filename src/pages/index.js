@@ -70,6 +70,7 @@ api
 // Selects the profile name and description elements from the HTML file
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+const avatarModalBtn = document.querySelector(".profile__avatar-edit-btn");
 
 // Creates the elements of the Edit Profile Modal (close button and two inputs ) and assigns them the corresponding values in the first object with the class edit-profile-modal in the HTML file
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -203,6 +204,12 @@ newPostButton.addEventListener("click", () => {
 });
 newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
 
+// Event listeners for opening and closing the avatar modal.
+avatarModalBtn.addEventListener("click", () => {
+  //resetNewPostFormState(); this line was commented out so the form state would persist
+  openModal(avatarModal);
+});
+
 // Close modal when clicking on the overlay background.
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
@@ -231,7 +238,8 @@ function handleEditProfileSubmit(evt) {
     about: editProfileDescriptionInput.value,
   };
 
-  api.editUserInfo(profileData)
+  api
+    .editUserInfo(profileData)
     .then((userInfo) => {
       profileNameEl.textContent = userInfo.name;
       profileDescriptionEl.textContent = userInfo.about;
