@@ -53,11 +53,11 @@ const api = new Api({
 api
   .getAppInfo()
   .then(([userInfo, cards]) => {
-    console.log(userInfo);
-    console.log(cards);
     // Update the profile name and description with the fetched user info.
-    //profileNameEl.textContent = userInfo.name;
-    //profileDescriptionEl.textContent = userInfo.about;
+    profileNameEl.textContent = userInfo.name;
+    profileDescriptionEl.textContent = userInfo.about;
+    profileAvatarEl.src = userInfo.avatar;
+    profileAvatarEl.alt = userInfo.name;
 
     // Create and append card elements for each item in the fetched cards array.
     cards.forEach(function (item) {
@@ -105,6 +105,16 @@ const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewCaptionEl = previewModal.querySelector(".modal__caption");
 
+// Selects the delete confirmation modal elements.
+const deleteCardModal = document.querySelector("#delete-card-modal");
+const deleteCardForm = deleteCardModal.querySelector(".modal__form");
+const deleteCardModalCloseBtn = deleteCardModal.querySelector(
+  ".modal__close-btn",
+);
+const deleteCardCancelBtn = deleteCardModal.querySelector(
+  ".modal__cancel-btn",
+);
+
 // Selects the card template from the HTML file.
 const cardTemplate = document
   .querySelector("#card-template")
@@ -113,6 +123,15 @@ const cardTemplate = document
 // Selects the container where the cards will be added.
 const cardsList = document.querySelector(".cards__list");
 const modals = document.querySelectorAll(".modal");
+
+let selectedCard = null;
+let selectedCardId = null;
+
+function handleDeleteCard(cardElement, data) {
+  selectedCard = cardElement;
+  selectedCardId = data._id;
+  openModal(deleteCardModal);
+}
 
 // Function to create a card element from the template and populate it with data.
 function getCardElement(data) {
@@ -139,7 +158,7 @@ function getCardElement(data) {
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
-    cardElement.remove();
+    handleDeleteCard(cardElement, data);
   });
 
   // Add event listener for opening the preview modal when the card image is clicked.
@@ -217,6 +236,14 @@ avatarModalBtn.addEventListener("click", () => {
 });
 avatarModalCloseBtn.addEventListener("click", () => closeModal(avatarModal));
 
+// Event listeners for closing the delete confirmation modal.
+deleteCardModalCloseBtn.addEventListener("click", () =>
+  closeModal(deleteCardModal),
+);
+deleteCardCancelBtn.addEventListener("click", () =>
+  closeModal(deleteCardModal),
+);
+
 // Close modal when clicking on the overlay background.
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
@@ -278,20 +305,38 @@ function handleAddCardSubmit(evt) {
     link: linkInput.value,
   };
 
-  // Create a card element using the getCardElement function.
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
+  api
+    .addCard(inputValues)
+    .then((cardData) => {
+      const cardElement = getCardElement(cardData);
+      cardsList.prepend(cardElement);
+      closeModal(newPostModal);
 
-  closeModal(newPostModal);
+      // Clear the new post form inputs after the card is saved.
+      evt.target.reset();
+      resetNewPostFormState();
+    })
+    .catch(console.error);
+}
 
-  // Clear the new post form inputs
-  evt.target.reset();
-  resetNewPostFormState();
+function handleDeleteCardSubmit(evt) {
+  evt.preventDefault();
+
+  api
+    .deleteCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModal(deleteCardModal);
+      selectedCard = null;
+      selectedCardId = null;
+    })
+    .catch(console.error);
 }
 
 // Attach the form submission handler to the edit profile form.
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
 avatarForm.addEventListener("submit", handleAvatarSubmit);
+deleteCardForm.addEventListener("submit", handleDeleteCardSubmit);
 
 enableValidation(settings);
