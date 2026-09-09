@@ -70,7 +70,13 @@ api
 // Selects the profile name and description elements from the HTML file
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+const profileAvatarEl = document.querySelector(".profile__avatar");
 const avatarModalBtn = document.querySelector(".profile__avatar-edit-btn");
+const avatarModal = document.querySelector("#avatar-modal");
+const avatarForm = avatarModal.querySelector(".modal__form");
+const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-btn");
+const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
+const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 
 // Creates the elements of the Edit Profile Modal (close button and two inputs ) and assigns them the corresponding values in the first object with the class edit-profile-modal in the HTML file
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -209,6 +215,7 @@ avatarModalBtn.addEventListener("click", () => {
   //resetNewPostFormState(); this line was commented out so the form state would persist
   openModal(avatarModal);
 });
+avatarModalCloseBtn.addEventListener("click", () => closeModal(avatarModal));
 
 // Close modal when clicking on the overlay background.
 modals.forEach((modal) => {
@@ -248,6 +255,18 @@ function handleEditProfileSubmit(evt) {
     .catch(console.error);
 }
 
+function handleAvatarSubmit(evt) {
+  evt.preventDefault();
+
+  api
+    .editAvatarInfo(avatarInput.value)
+    .then((data) => {
+      profileAvatarEl.src = data.avatar;
+      closeModal(avatarModal);
+    })
+    .catch(console.error);
+}
+
 // Function to handle the submission of the new post form.
 function handleAddCardSubmit(evt) {
   // Prevent the default form submission behavior.
@@ -273,5 +292,6 @@ function handleAddCardSubmit(evt) {
 // Attach the form submission handler to the edit profile form.
 editProfileModal.addEventListener("submit", handleEditProfileSubmit);
 newPostModal.addEventListener("submit", handleAddCardSubmit);
+avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 enableValidation(settings);

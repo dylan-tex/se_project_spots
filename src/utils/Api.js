@@ -47,6 +47,21 @@ class Api {
     });
   } // end of editUserInfo() method
 
+  async editAvatarInfo(avatar) {
+    const res = await fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      // Send the data in the body as a JSON string.
+      body: JSON.stringify({
+        avatar,
+      }),
+    });
+    if (res.ok) {
+      return res.json();
+    }
+    return await Promise.reject(`Error: ${res.status}`);
+  } // end of editAvatarInfo() method
+
   // other methods for working with the API
 }
 
