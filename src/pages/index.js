@@ -152,8 +152,21 @@ function getCardElement(data) {
 
   // Add event listener for the like button.
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnEl.classList.toggle("card__like-btn_liked", data.isLiked);
   cardLikeBtnEl.addEventListener("click", () => {
-    cardLikeBtnEl.classList.toggle("card__like-btn_liked");
+    const isLiked = cardLikeBtnEl.classList.contains("card__like-btn_liked");
+    const likeRequest = isLiked
+      ? api.removeLike(data._id)
+      : api.addLike(data._id);
+
+    likeRequest
+      .then((updatedCard) => {
+        cardLikeBtnEl.classList.toggle(
+          "card__like-btn_liked",
+          updatedCard.isLiked,
+        );
+      })
+      .catch(console.error);
   });
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
