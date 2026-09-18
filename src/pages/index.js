@@ -88,6 +88,9 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input",
 );
 const profileEditButton = document.querySelector(".profile__edit-btn");
+const editProfileSubmitBtn = editProfileModal.querySelector(
+  ".modal__submit-btn",
+);
 const editProfileModalCloseBtn =
   editProfileModal.querySelector(".modal__close-btn");
 
@@ -96,6 +99,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const captionInput = newPostModal.querySelector("#new-post-caption-input");
 const linkInput = newPostModal.querySelector("#new-post-link-input");
 const newPostButton = document.querySelector(".profile__add-btn");
+const newPostSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostInputs = [captionInput, linkInput];
 
@@ -113,6 +117,9 @@ const deleteCardModalCloseBtn = deleteCardModal.querySelector(
 );
 const deleteCardCancelBtn = deleteCardModal.querySelector(
   ".modal__cancel-btn",
+);
+const deleteCardSubmitBtn = deleteCardModal.querySelector(
+  ".modal__submit-btn",
 );
 
 // Selects the card template from the HTML file.
@@ -219,11 +226,12 @@ function closeModal(modal) {
 }
 
 function resetNewPostFormState() {
-  const newPostSubmitBtn = newPostModal.querySelector(
-    settings.submitButtonSelector,
-  );
   resetValidation(newPostModal, newPostInputs, settings);
   toggleButtonState(newPostInputs, newPostSubmitBtn, settings);
+}
+
+function renderLoading(isLoading, button, defaultText, loadingText) {
+  button.textContent = isLoading ? loadingText : defaultText;
 }
 
 // Event listeners for opening and closing the edit profile modal.
@@ -285,6 +293,7 @@ function handleEditProfileSubmit(evt) {
     about: editProfileDescriptionInput.value,
   };
 
+  renderLoading(true, editProfileSubmitBtn, "Save", "Saving...");
   api
     .editUserInfo(profileData)
     .then((userInfo) => {
@@ -292,19 +301,26 @@ function handleEditProfileSubmit(evt) {
       profileDescriptionEl.textContent = userInfo.about;
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(false, editProfileSubmitBtn, "Save", "Saving...");
+    });
 }
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
 
+  renderLoading(true, avatarSubmitBtn, "Save", "Saving...");
   api
     .editAvatarInfo(avatarInput.value)
     .then((data) => {
       profileAvatarEl.src = data.avatar;
       closeModal(avatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(false, avatarSubmitBtn, "Save", "Saving...");
+    });
 }
 
 // Function to handle the submission of the new post form.
@@ -318,6 +334,7 @@ function handleAddCardSubmit(evt) {
     link: linkInput.value,
   };
 
+  renderLoading(true, newPostSubmitBtn, "Save", "Saving...");
   api
     .addCard(inputValues)
     .then((cardData) => {
@@ -329,12 +346,16 @@ function handleAddCardSubmit(evt) {
       evt.target.reset();
       resetNewPostFormState();
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(false, newPostSubmitBtn, "Save", "Saving...");
+    });
 }
 
 function handleDeleteCardSubmit(evt) {
   evt.preventDefault();
 
+  renderLoading(true, deleteCardSubmitBtn, "Delete", "Deleting...");
   api
     .deleteCard(selectedCardId)
     .then(() => {
@@ -343,7 +364,10 @@ function handleDeleteCardSubmit(evt) {
       selectedCard = null;
       selectedCardId = null;
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(false, deleteCardSubmitBtn, "Delete", "Deleting...");
+    });
 }
 
 // Attach the form submission handler to the edit profile form.
