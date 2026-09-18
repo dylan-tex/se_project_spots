@@ -14,13 +14,13 @@
 
 [Link to my project](https://dylan-tex.github.io/se_project_spots/) on GitHub Pages
 
-[![Link to Project on Pages](images/spots-project.jpeg)](https://dylan-tex.github.io/se_project_spots/)
+[![Link to Project on Pages](src/images/spots-project.jpeg)](https://dylan-tex.github.io/se_project_spots/)
 
 Check out
 [this video](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci), where I describe my
 project and some challenges I faced while building it.
 
-[![Video Overview](images/video_banner_spots_stage_9.png)](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci)
+[![Video Overview](src/images/video_banner_spots_stage_9.png)](https://vimeo.com/1150901065/e26c0f0d01?share=copy&fl=sv&fe=ci)
 
 ## Intro
 
@@ -28,7 +28,7 @@ This project made heavy use of JS, the DOM, validation, Figma, advanced Git, and
 
 In this most recent update I implemented form validation, added a second JS file for validation, and utilized object declaration to simplify references to classses and selectors rather than relying on object literals.
 
-![Visual Studio Code](images/visual-studio-code.jpeg)
+![Visual Studio Code](src/images/visual-studio-code.jpeg)
 
 ### GitHub Branches
 
@@ -40,7 +40,7 @@ I created three branches in this project and they were:
 - main-backup
 - test-branch
 
-![Git Branches](images/git-branches_visual-studio.jpeg)
+![Git Branches](src/images/git-branches_visual-studio.jpeg)
 
 There were several instances where merge conlflicts came up, and also where I had to overwrite one branch with another.
 
@@ -62,14 +62,14 @@ For a full list of useful command in Git, see [GitHub Commands](https://git-scm.
 
 This was the Figma file used to model the project. Understanding how to interpret Figma continued to play a major role in this project.
 
-![Figma](images/figma-layout.jpeg)
+![Figma](src/images/figma-layout.jpeg)
 
 - [Link to the project on Figma](https://www.figma.com/file/jFtXsDr4XOyebKcgjyXN6W/Sprint-6-Project%3A-Spots?type=design&mode=design&t=mOmexgRdnrmMll3T-0)
 
 - Using the `option` key to find distances between parts of the layout
 - Identifying fonts, layouts, and colors from the Figma utilizing the properties panel, seen below:
 
-![Figma](images/figma-properties.jpeg)
+![Figma](src/images/figma-properties.jpeg)
 
 This project also made use of responsive design for mobile devices, deploying code such as the following:
 
@@ -165,13 +165,13 @@ Here is the command to go back to a specific commit, shoudl you need it:
 
 where the commit has is the 7 digit number seen before each commit below:
 
-![Terminal Commits](images/terminal_commit_history.jpeg)
+![Terminal Commits](src/images/terminal_commit_history.jpeg)
 
 Also-- there are some AI functions built into Visual Studio code as extensions which can help you identify solutions quicker than on your own.
 
 One tool is GitHub Copilot which users can implement with varying degrees of impact on the project itself. There are several different modes users can work with.
 
-![GitHub Copilot](images/github-copilot.jpeg)
+![GitHub Copilot](src/images/github-copilot.jpeg)
 
 ## Plans on Improving the Project
 
