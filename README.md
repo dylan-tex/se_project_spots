@@ -16,11 +16,12 @@
 
 [![Link to Project on Pages](src/images/spots-project.jpeg)](https://dylan-tex.github.io/se_project_spots/)
 
-Check out
-[this video](https://drive.google.com/file/d/1m2vvW1oY9Y23zwPNuFPch2XMqE07cKlz/view?usp=sharing), where I describe my
-project and some challenges I faced while building it.
+## Project Pitch Videos
 
-[![Video Overview](src/images/video_banner_spots_stage_9.png)](https://drive.google.com/file/d/1m2vvW1oY9Y23zwPNuFPch2XMqE07cKlz/view?usp=sharing)
+- [Part 1: Spots](https://www.youtube.com/watch?v=q57LHM8_KTM)
+- [Final Stage: API Interactions](https://drive.google.com/file/d/1m2vvW1oY9Y23zwPNuFPch2XMqE07cKlz/view?usp=sharing)
+
+[![Final Stage Video Overview](src/images/video_banner_spots_stage_9.png)](https://drive.google.com/file/d/1m2vvW1oY9Y23zwPNuFPch2XMqE07cKlz/view?usp=sharing)
 
 ## Intro
 
