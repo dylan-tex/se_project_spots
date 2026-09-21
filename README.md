@@ -56,8 +56,12 @@ Create a production build with:
 npm run build
 ```
 
-## Branches
+## API Integration
 
-- `main` contains the stable project history.
-- `project-9` is the active source branch for the Sprint 9 implementation.
-- `spots-final` is the final review branch and is the source branch for the pull request into `main`.
+The application uses the TripleTen REST API with `fetch` requests. Profile details, the avatar, cards, likes, and card deletions are saved on the server, so completed changes remain after the page reloads. Form submissions show loading text while requests are in progress and log errors if a request fails.
+
+## Future Improvements
+
+- Allow users to upload image files instead of supplying image URLs.
+- Display user-friendly request errors in the interface.
+- Add card ownership rules so users can delete only their own cards.
