@@ -24,27 +24,44 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%= require('./images/avatar.jpg') %>"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src="<%= require('./images/avatar.jpg') %>"
+              alt="Bessie Coleman"
+              class="profile__avatar"
+            />
+            <button type="button" class="profile__avatar-edit-btn">
+              <img
+                src="<%= require('./images/pencil-light.svg') %>"
+                alt="Edit avatar icon"
+                class="profile__avatar-edit-icon"
+              /><span class="profile__avatar-edit-label">Edit Avatar</span>
+            </button>
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
-              <img src="<%= require('./images/pencil.svg') %>" alt="Pencil icon" />Edit Profile
+              <img
+                src="<%= require('./images/pencil.svg') %>"
+                alt="Pencil icon"
+              />Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-btn">
-            <img src="<%= require('./images/plus.svg') %>" alt="Plus icon" />New Post
+            <img src="<%= require('./images/plus.svg') %>" alt="Plus icon" />New
+            Post
           </button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <button type="button" class="card__delete-btn"></button>
+                <button
+                  type="button"
+                  class="card__delete-btn"
+                  aria-label="Delete card"
+                ></button>
                 <img class="card__image" src="#" alt="" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
@@ -140,6 +157,64 @@
               ></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="avatar-modal">
+        <div class="modal__container">
+          <h2 class="modal__title">Edit Avatar</h2>
+          <button type="button" class="modal__close-btn">
+            <img
+              src="<%= require('./images/close-icon.svg') %>"
+              alt="Close"
+              class="close-icon"
+            />
+          </button>
+          <form name="avatar" class="modal__form" id="edit-avatar-form" novalidate>
+            <label class="modal__label" for="profile-avatar-input">
+              Avatar
+              <input
+                id="profile-avatar-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste a link to your avatar"
+                required
+              />
+              <span id="profile-avatar-input-error" class="modal__error"></span>
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="delete-card-modal">
+        <div class="modal__container modal__container_type_delete">
+          <h2 class="modal__title modal__title_type_delete">
+            Are you sure you want to delete this image?
+          </h2>
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_type_delete"
+            aria-label="Close delete confirmation"
+          >
+            <img
+              src="<%= require('./images/close-icon-variant.svg') %>"
+              alt=""
+              class="close-icon"
+            />
+          </button>
+          <form
+            name="delete-card"
+            class="modal__form modal__form_type_delete"
+          >
+            <button
+              type="submit"
+              class="modal__submit-btn modal__submit-btn_type_delete"
+            >
+              Delete
+            </button>
+            <button type="button" class="modal__cancel-btn">Cancel</button>
           </form>
         </div>
       </div>
